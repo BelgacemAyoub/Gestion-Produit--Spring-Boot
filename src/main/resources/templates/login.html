@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- layout:decorator="layout" -->   <!-- n'a pas besoin d'afficher la bare de menu -->
+<head>
+<meta charset="utf-8" />
+	<script type="text/javascript" src="webjars/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+<title>FormProduit</title>
+<!-- 	<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootsrap.min.css}" />  -->
+
+	<link rel="stylesheet" type="text/css"
+	href="../static/css/style.css"
+	th:href="@{css/style.css}" /> 
+</head>
+<body>
+	<!-- <div layout:fragment="content"> -->
+	<div class="container spacer col-md-4 col-md-offset-4 col-xs-12">
+	<div class="container">
+	<span class="red" th:if="${param.error}">   
+		Incorrect username or password
+	</span>
+	
+	<span class="red" th:if="${param.logout}">   
+		You have been logged out
+	</span>
+	</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">Authentification</div>
+			<div class="panel-body">
+				<form th:action="@{/login}" method="post">    <!-- quand je vais valider le formulaire je fait appele à une action que je vais appeler save --> 
+					
+					<div class="form-group">
+						<label class="control-label">Login:</label>
+						<input type="text" class="form-control" name="username"/> <!-- spring security cherche un paramétre qui s'appele username -->
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label">Password:</label>
+						<input type="password" class="form-control" name="password"/> <!-- spring security cherche un paramétre qui s'appele password -->
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>	
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
