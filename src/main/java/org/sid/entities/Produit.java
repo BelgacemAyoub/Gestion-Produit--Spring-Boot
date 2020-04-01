@@ -9,8 +9,8 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 @Entity
-public class Produit implements Serializable {    // pour la sérialization binaire 
-	@Id @GeneratedValue   // la valeur de Id est généré automatiquement
+public class Produit implements Serializable {    
+	@Id @GeneratedValue   
 	 
 	private Long id;
 	@NotNull
@@ -31,11 +31,7 @@ public class Produit implements Serializable {    // pour la sérialization bina
 	}
 
 	public Long getId() {
-												/*
-												 * Les getters et les Setters sont respéctivement des accésseurs en lecture et
-												 * en écriture. get pour lire : accéder aux valeurs des variables d'instance set
-												 * pour alterer modifier les valeurs de variables d'instance
-												 */		
+												
 		return id;
 	}
 	public void setId(Long id) {
