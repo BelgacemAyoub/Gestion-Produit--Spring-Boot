@@ -20,9 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-	/*	auth.inMemoryAuthentication().withUser("admin").password("1234").roles("USER", "ADMIN");  
-		auth.inMemoryAuthentication().withUser("user").password("1234").roles("USER");  */
-		
 		auth.jdbcAuthentication()
 			.dataSource(dataSource)  											
 			.usersByUsernameQuery("select login as principal,pass as credentials,active from users where login=?")  		
@@ -31,8 +28,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.rolePrefix("ROLE_");
 	
 	}			
-	
-	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
