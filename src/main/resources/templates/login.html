@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<!-- layout:decorator="layout" -->   <!-- n'a pas besoin d'afficher la bare de menu -->
 <head>
 <meta charset="utf-8" />
 	<script type="text/javascript" src="webjars/jquery/3.3.1/jquery.min.js"></script>
@@ -17,7 +16,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	th:href="@{css/style.css}" /> 
 </head>
 <body>
-	<!-- <div layout:fragment="content"> -->
 	<div class="container spacer col-md-4 col-md-offset-4 col-xs-12">
 	<div class="container">
 	<span class="red" th:if="${param.error}">   
@@ -31,16 +29,16 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		<div class="panel panel-primary">
 			<div class="panel-heading">Authentification</div>
 			<div class="panel-body">
-				<form th:action="@{/login}" method="post">    <!-- quand je vais valider le formulaire je fait appele à une action que je vais appeler save --> 
+				<form th:action="@{/login}" method="post">    
 					
 					<div class="form-group">
 						<label class="control-label">Login:</label>
-						<input type="text" class="form-control" name="username"/> <!-- spring security cherche un paramétre qui s'appele username -->
+						<input type="text" class="form-control" name="username"/> 
 					</div>
 					
 					<div class="form-group">
 						<label class="control-label">Password:</label>
-						<input type="password" class="form-control" name="password"/> <!-- spring security cherche un paramétre qui s'appele password -->
+						<input type="password" class="form-control" name="password"/> 
 					</div>
 					<div>
 						<button type="submit" class="btn btn-primary">Save</button>
