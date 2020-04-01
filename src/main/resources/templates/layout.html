@@ -19,13 +19,12 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 </head>
 <body>
 	<header>
-		<div class="navbar navbar-default">  <!-- une simple bar de navigation -->
-			<div class="container-fluid">    <!-- menu qui est fluid -->
-				<ul class="nav navbar-nav">  <!-- une bar de navigation classique -->
-					<li><a th:href="@{/user/index}">Chercher</a></li>     <!-- @{index} : c'est l'action -->
-					<li><a th:href="@{/admin/form}">Produits</a></li>      <!-- @{form} : c'est l'action -->
-					<li><a th:href="@{/login?logout}" th:inline="text">[[${#httpServletRequest.remoteUser}]]</a></li>      
-					<!-- <li><a th:href="@{/login?logout}" th:inline="text">[[$#{httpServletRequest.remoteUser}]]</a></li> -->	
+		<div class="navbar navbar-default">  
+			<div class="container-fluid">    
+				<ul class="nav navbar-nav">  
+					<li><a th:href="@{/user/index}">Chercher</a></li>   
+					<li><a th:href="@{/admin/form}">Produits</a></li>     
+					<li><a th:href="@{/login?logout}" th:inline="text">[[${#httpServletRequest.remoteUser}]]</a></li>      	
 				</ul>
 			</div>
 		</div>
