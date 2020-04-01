@@ -22,35 +22,30 @@ layout:decorator="layout">
 		<div class="panel panel-default">
 			<div class="panel-heading">Saisie d'un produit</div>
 			<div class="panel-body">
-				<form th:action="@{/admin/save}" method="post">    <!-- quand je vais valider le formulaire je fait appele à une action que je vais appeler save --> 
+				<form th:action="@{/admin/save}" method="post">   
 					
 					<div class="form-group">
 						<label class="control-label">ID:</label>
-						<input type="text" class="form-control" name="id" th:value="${produit.id}" /> 
-						<!-- (name ="id")=> il faudrait donner les memes noms que les attributs de la classe Produit -->	
+						<input type="text" class="form-control" name="id" th:value="${produit.id}" /> 	
 						<span class="red" th:errors="${produit.id}"></span>	
-						<!-- c'est à dire dans la collection des erreurs si il ya une erreur qui concerne le champ produit.id qui va me l'affiché ici -->																						
+																												
 					</div>
 					
 					<div class="form-group">
 						<label class="control-label">Désignation:</label>
-						<input type="text" class="form-control" name="designation" th:value="${produit.designation}" /> 
-						<!-- (name ="designation")=> il faudrait donner les memes noms que les attributs de la classe Produit -->	
-						<span class="red" th:errors="${produit.designation}"></span>	
-						<!-- c'est à dire dans la collection des erreurs si il ya une erreur qui concerne le champ produit.designation qui va me l'affiché ici -->																						
+						<input type="text" class="form-control" name="designation" th:value="${produit.designation}" /> 	
+						<span class="red" th:errors="${produit.designation}"></span>																							
 					</div>
 					
 					<div class="form-group">
 						<label class="control-label">Prix:</label>
 						<input type="text" class="form-control" name="prix" th:value="${produit.prix}" />
-						<!-- (name ="prix")=> il faudrait donner les memes noms que les attributs de la classe Produit -->
 						<span class="red" th:errors="${produit.prix}"></span>																									
 					</div>
 					
 					<div class="form-group">
 						<label class="control-label">Quantité:</label>
 						<input type="text" class="form-control" name="quantite" th:value="${produit.quantite}" />
-						<!-- (name ="prix")=> il faudrait donner les memes noms que les attributs de la classe Produit -->
 						<span class="red" th:errors="${produit.quantite}"></span>
 					</div>
 					<div>
